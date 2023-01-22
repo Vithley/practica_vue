@@ -9,13 +9,16 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav mx-auto">
             <li class="nav-item">
+                <router-link class="nav-link" :to="{name: 'home'}">Home</router-link>
+            </li>
+            <li class="nav-item">
                 <router-link class="nav-link" :to="{name: 'products'}">Productos</router-link>
             </li>
             <li class="nav-item">
-                <router-link class="nav-link" :to="{name: 'profile'}">Perfil</router-link>
+                <router-link class="nav-link" :to="{name: 'profile'}">Detalles</router-link>
             </li>
             <li class="nav-item">
-                
+                <router-link class="nav-link" :to="{name: 'detail', params: {id: 1}}">Perfil</router-link>
             </li>
       </ul>
       

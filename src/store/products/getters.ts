@@ -10,6 +10,10 @@ const getters: GetterTree<IProductState, IState> = {
     getIsLoading(state) {
         return state.isLoading;
 
+    },
+
+    getProducts(state) {
+        return state.selectedProduct
     }
 }
 

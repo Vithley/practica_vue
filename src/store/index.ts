@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 import { Products } from '../models/products';
-import productModule from './product/index';
+import productModule from './products/index';
 
 export interface IState {
   product: Products | null; 
