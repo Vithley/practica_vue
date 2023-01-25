@@ -5,6 +5,7 @@
         </div>
 
         <div v-else>
+            <SearchProduct/>
             <div class="container text-center">
                 <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-4 row-cols-xl-3 row-cols-xxl-3 ml-md-auto">  
                     <ProductItem 
@@ -41,29 +42,39 @@
 </template>
 
 <script lang="ts">
-import fakeShopApi from '@/api/fakeShopApi';
+
 import { Products } from '../models/products';
-import { AxiosResponse } from 'axios';
 import useProducts from '../composables/useProducts';
 import ProductItem from '@/components/ProductItem.vue';
 import { useRouter } from 'vue-router';
+import SearchProduct from '@/components/SearchProduct.vue';
+
+
+
 
 
 export default {
     name: "ProductsView",
     components: {
-        ProductItem
+        ProductItem, 
+        SearchProduct
+    
     },
 
+    
+
     setup() {
-        fakeShopApi.get<unknown, AxiosResponse<Products[]>>('/products').then(resp => console.log(resp.data))
-        const {products, isLoading, fetchProducts} = useProducts();
+      
+        const {products, isLoading, fetchProducts } = useProducts();
         const router = useRouter();
         fetchProducts();
+    
+        
         return{
             products, 
             isLoading, 
-            goDetail: (product: Products) => router.push({name: 'detail', params: {id: product.id}})}
+            goDetail: (product: Products) => router.push({name: 'detail', params: {id: product.id}})
+        }
     }
 }
 </script>

@@ -15,10 +15,10 @@
                 <router-link class="nav-link" :to="{name: 'products'}">Productos</router-link>
             </li>
             <li class="nav-item">
-                <router-link class="nav-link" :to="{name: 'profile'}">Detalles</router-link>
+                <router-link class="nav-link" :to="{name: 'profile'}">Perfil</router-link>
             </li>
             <li class="nav-item">
-                <router-link class="nav-link" :to="{name: 'detail', params: {id: 1}}">Perfil</router-link>
+                <router-link class="nav-link d-none" :to="{name: 'detail', params: {id: 1}}">Detalles</router-link>
             </li>
       </ul>
       

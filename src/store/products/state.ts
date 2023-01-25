@@ -1,8 +1,10 @@
+
 import { Products } from '../../models/products';
 export interface IProductState {
     product: Products[];
     isLoading: boolean;
     selectedProduct: Products | null;
+   
 }
 
 function state(): IProductState {
@@ -10,6 +12,7 @@ function state(): IProductState {
         product: [],
         isLoading: false,
         selectedProduct: null,
+        
         
     }
 }

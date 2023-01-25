@@ -3,6 +3,7 @@ import { useStore } from "vuex";
 
 const useProducts= () => {
     const store = useStore();
+   
     
     return {
         // Obtengo los Getters
@@ -14,6 +15,9 @@ const useProducts= () => {
         fetchProducts: () => store.dispatch('product/fetchProducts'),
         fetchProductId: (productId: number) => {
             store.dispatch("product/fetchProductId", productId)
+        },
+        searchProduct: (productName: string) => {
+            store.dispatch("product/searchProduct", productName)
         }
 
     }

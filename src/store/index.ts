@@ -1,16 +1,18 @@
 import { createStore } from 'vuex'
 import { Products } from '../models/products';
 import productModule from './products/index';
+import authModule from './auth/index';
+
 
 export interface IState {
   product: Products | null; 
-  greeting: string;
+ 
 }
 
 export default createStore<IState>({
   state: {
     product: null,
-    greeting: 'Hola'
+    
   },
   getters: {
   },
@@ -19,6 +21,7 @@ export default createStore<IState>({
   actions: {
   },
   modules: {
-    product : productModule
+    product: productModule,
+    auth: authModule
   }
 })
