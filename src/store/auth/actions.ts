@@ -17,7 +17,7 @@ const actions: ActionTree<IAuthState, IState> = {
             commit('setToken', data);
             // Guardo el token en el localStorage y vamos a home
             localStorage.setItem('token', data.access_token);
-            router.push({name: 'home'})
+            router.push({name: 'products'})
         
         } catch(err:any) {
             console.log(err.message)
