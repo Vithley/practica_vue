@@ -1,11 +1,10 @@
-import { Auth } from "@/models/users";
+import { Auth } from "@/models/auth";
+import { Token } from '../../models/token';
 
 export interface IAuthState {
-    auth: Auth[];
-    status: string,
-    access_token: null,
-    email: string,
-    password: string
+    auth: Auth | null;
+    isLoading: boolean;
+    token: Token | null;
     
     
    
@@ -13,11 +12,9 @@ export interface IAuthState {
 
 function state(): IAuthState {
     return {
-        auth: [],
-        status: 'Authorization',
-        access_token: null,
-        email: " ",
-        password: " "
+        auth: null,
+        isLoading: false,
+        token: null
         
         
         

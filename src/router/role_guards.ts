@@ -2,14 +2,14 @@ import { RouteLocation} from "vue-router";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const haveRoleGuard = (to: RouteLocation, from: RouteLocation, next:any) => {
-    console.log(to, from, next)
+    //console.log(to, from, next)
 
-    const useRole = localStorage.getItem("useRole");
+    const useRole = localStorage.getItem("token");
 
-    if(useRole === "Admin") {
+    if(useRole) {
         next();
     } else {
-        alert('No eres admin! No puedes pasar')
+        alert('No tienes permisos, serás redirigido al Login!')
         next({name: 'auth'})
     }
 }

@@ -1,5 +1,3 @@
-
-
 <template>
     <section class="vh-100" style="background-color: #9A616D;">
   <div class="container py-5 h-100">
@@ -14,7 +12,7 @@
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
 
-                <form>
+                <form @submit.prevent="token">
 
                   <div class="d-flex align-items-center mb-3 pb-1">
                     <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -25,23 +23,22 @@
 
                   <div class="form-outline mb-4">
                     <label class="form-label" for="email">Email</label>
-                    <input  type="email" id="email" class="form-control form-control-lg" required />
+                    <input v-model.lazy="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                     
                   </div>
 
                   <div class="form-outline mb-4">
                     <label class="form-label" for="password">Password</label>
-                    <input  type="password" id="password" class="form-control form-control-lg" required />
+                    <input v-model.lazy="password" type="password" class="form-control" id="exampleInputPassword1" required>
                     
                   </div>
 
                   <div class="pt-1 mb-4">
     
-                    <button class="btn btn-dark btn-lg btn-block" type="button">Login</button>
+                    <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
                   </div>
 
                 </form>
-
               </div>
             </div>
           </div>
@@ -53,20 +50,30 @@
 </template>
 
 <script lang="ts">
+import { defineComponent } from '@vue/runtime-core';
 import { ref } from 'vue';
+import useAuth from '../composables/useAuth';
 
-
-
-
-export default {
+export default defineComponent ({
   
   
   name: "LoginView",
 
   setup(){
-   
+
+    const { fecthAuth } = useAuth();
+
+    let email = ref("")
+    let password = ref("")
+
+    const token = () => {
+      fecthAuth({email: email.value, password: password.value})
+    }
       
       return {
+        email, 
+        password,
+        token
         
             
       }
@@ -78,7 +85,7 @@ export default {
       
       
      
-}
+});
 
 
   
