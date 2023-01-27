@@ -1,6 +1,6 @@
 <template>
   <div class="card" style="width: 18rem">
-    <img :src="products.images" :alt="products.title" class="card-img-top" />
+    <img :src="products.images[0]" :alt="products.title" class="card-img-top" />
     <div class="card-body">
       <h5 class="card-title">{{ products.title }}</h5>
       <p class="card-text">{{ products.description }}</p>

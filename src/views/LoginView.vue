@@ -30,6 +30,7 @@
                         class="form-control"
                         id="exampleInputEmail1"
                         aria-describedby="emailHelp"
+                        pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}"
                         required
                       />
                     </div>

@@ -3,8 +3,6 @@ import { useStore } from 'vuex';
 import { Auth } from '@/models/auth';
 
 
-
-
 const useAuth = () => {
     const store = useStore();
     

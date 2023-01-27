@@ -6,7 +6,7 @@ const useProducts= () => {
    
     
     return {
-        // Obtengo los Getters
+        // Getters
         products: computed(()=> store.getters['product/getProduct']),
         isLoading: computed(() => store.getters['product/getIsLoading']),
         product: computed(() => store.getters["product/getProducts"]),
