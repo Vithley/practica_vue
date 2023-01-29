@@ -26,14 +26,6 @@
       <li class="page-item disabled">
         <span class="page-link">Previous</span>
       </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item active">
-        <span class="page-link">
-          2
-          <span class="sr-only">(current)</span>
-        </span>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
       <li class="page-item">
         <a class="page-link" href="#">Next</a>
       </li>
@@ -61,12 +53,16 @@ export default {
     const { products, isLoading, fetchProducts } = useProducts();
     const router = useRouter();
     fetchProducts();
+    
 
     return {
       products,
       isLoading,
       goDetail: (product: Products) =>
         router.push({ name: "detail", params: { id: product.id } }),
+      page: 1,
+      characters: [],
+      pages: 1
     };
   },
 };

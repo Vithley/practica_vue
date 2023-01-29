@@ -14,6 +14,10 @@ const getters: GetterTree<IProductState, IState> = {
   getProducts(state) {
     return state.selectedProduct;
   },
+
+
+
+ 
 };
 
 export default getters;

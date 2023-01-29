@@ -35,6 +35,9 @@
           <h2>Price: {{ product.price }}$</h2>
         </template>
       </ProfileCard>
+
+    
+
     </div>
     <div v-else>Cargando...</div>
   </div>
@@ -45,6 +48,7 @@ import useProducts from "@/composables/useProducts";
 import { defineComponent, ref } from "vue";
 import ProfileCard from "@/components/ProfileCard.vue";
 import NavBarLinks from "@/components/NavBarLinks.vue";
+
 
 export default defineComponent({
   name: "ProfileView",
@@ -65,6 +69,7 @@ export default defineComponent({
     const { product, fetchProductId, isLoading } = useProducts();
     fetchProductId(props.id);
     let viewPictures = ref();
+
     const changePictures = (index: number) => {
       viewPictures.value = product.value.images[index];
     };

@@ -17,6 +17,8 @@ const mutations: MutationTree<IProductState> = {
   setSelectedProduct(state, product: Products) {
     state.selectedProduct = product;
   },
+
+
   
 };
 

@@ -10,6 +10,7 @@ const useProducts= () => {
         products: computed(()=> store.getters['product/getProduct']),
         isLoading: computed(() => store.getters['product/getIsLoading']),
         product: computed(() => store.getters["product/getProducts"]),
+        userImages: computed(() => store.getters['product/getSelectedProductImage']),
 
         // Actions
         fetchProducts: () => store.dispatch('product/fetchProducts'),
