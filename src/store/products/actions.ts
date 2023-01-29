@@ -15,7 +15,7 @@ const actions: ActionTree<IProductState, IState> = {
     ); //?offset=0&limit=9
     commit("setIsLoading", false);
     commit("setProducts", data);
-    console.log(data)
+   
   },
 
   // Llamamos a la API para obtener el producto por su Id
